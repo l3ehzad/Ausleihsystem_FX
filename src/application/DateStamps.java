@@ -1,7 +1,8 @@
+package application;
 import java.text.*;
 import java.util.* ;
 
-public class DateStamp {
+public class DateStamps {
 
     private static Calendar cal = new GregorianCalendar();
     static DateFormat dateformatter = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");    //DateFormat: Oberklasse & SimpleDateFormat:Unterklasse

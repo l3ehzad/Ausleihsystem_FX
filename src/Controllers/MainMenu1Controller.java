@@ -1,5 +1,6 @@
-package sample;
+package Controllers;
 
+import DBConnection.DatabaseConnection;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -27,7 +28,7 @@ public class MainMenu1Controller {
     //root = FXMLLoader.load(getClass().getResource("mainMenu1.fxml"));
 
     public void switchToArtikelAusleihen(ActionEvent event) throws IOException, RuntimeException {
-        root = FXMLLoader.load(getClass().getResource("artikelAusleihen.fxml"));
+        root = FXMLLoader.load(getClass().getResource("../FXML/artikelAusleihen.fxml"));
         stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
         scene = new Scene(root);
         stage.setScene(scene);

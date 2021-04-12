@@ -9,11 +9,11 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane fx:id="loginBackground" prefHeight="600.0" prefWidth="1024.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.LoginController">
+<AnchorPane fx:id="loginBackground" prefHeight="600.0" prefWidth="1024.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.LoginController">
    <children>
       <ImageView fitHeight="279.0" fitWidth="492.0" layoutX="69.0" layoutY="112.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@../Images/LogoLogin.png" />
+            <Image url="@../zImages/LogoLogin.png" />
          </image>
       </ImageView>
       <TextField fx:id="logUsername" layoutX="734.0" layoutY="224.0" promptText="DSHS-ID or Username" />

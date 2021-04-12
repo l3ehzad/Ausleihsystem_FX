@@ -1,5 +1,6 @@
-package sample;
+package Controllers;
 
+import DBConnection.DatabaseConnection;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -56,7 +57,7 @@ public class LoginController implements Initializable {
     }
 
     public void switchToMainMenu(ActionEvent event) throws IOException, RuntimeException {
-        root = FXMLLoader.load(getClass().getResource("mainMenu1.fxml"));
+        root = FXMLLoader.load(getClass().getResource("../FXML/mainMenu1.fxml"));
         stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
         scene = new Scene(root);
         stage.setScene(scene);

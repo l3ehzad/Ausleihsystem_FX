@@ -1,4 +1,4 @@
-package sample;
+package application;
 
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
@@ -12,7 +12,7 @@ public class MainFX extends Application {
     @Override
     public void start(Stage stage) throws Exception {
         try {
-            Parent root = FXMLLoader.load(getClass().getResource("login.fxml"));
+            Parent root = FXMLLoader.load(getClass().getResource("../FXML/login.fxml"));
             Scene scene = new Scene(root, 1024, 600);
 
             String css = this.getClass().getResource("styling.css").toExternalForm();
@@ -22,7 +22,7 @@ public class MainFX extends Application {
 /*            Scene scene2 = new Scene(FXMLLoader.load(getClass().getResource("mainMenu1.fxml")));
             scene2.getStylesheets().add(css);*/
 
-            Image icon = new Image("/Images/icon.png");
+            Image icon = new Image("/zImages/icon.png");
             stage.getIcons().add(icon);
             stage.setTitle("  Deutsche Sporthochschule Köln | Ausleihsystem");
             stage.setScene(scene);

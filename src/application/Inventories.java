@@ -1,15 +1,17 @@
-import java.io.IOException;
+package application;
+import DBConnection.DatabaseConnection;
+
 import java.sql.*;
 import java.util.*;
 
-public class Inventory {            //to check nr. of availablity
-/*    private static int inventID;*/
+public class Inventories {            //to check nr. of availablity
+    /*    private static int inventID;*/
     private String inventType;
     private int inventSum;
 
 
     //CONSTRUCTOR:
-    public Inventory(String inventType, int inventSum) {
+    public Inventories(String inventType, int inventSum) {
 /*        try {
             inventID = setInventID();
         } catch (Exception e) {
@@ -28,18 +30,18 @@ public class Inventory {            //to check nr. of availablity
     }
 
     public static boolean checkInventIdAvailablity(int inventID) throws SQLException{
-            ArrayList<Integer> array = new ArrayList<Integer>();
-            PreparedStatement statement = Main.con.prepareStatement("SELECT inventID FROM inventory;");
-            ResultSet result = statement.executeQuery();
-            while (result.next()){
-                array.add(result.getInt(1));
-            }
+        ArrayList<Integer> array = new ArrayList<Integer>();
+        PreparedStatement statement = DatabaseConnection.conn.prepareStatement("SELECT inventID FROM inventory;");
+        ResultSet result = statement.executeQuery();
+        while (result.next()){
+            array.add(result.getInt(1));
+        }
         return (array.contains(inventID));
     }
 
     public static boolean checkInvTypeAva (String inventType) throws SQLException {
         ArrayList<String> array = new ArrayList<>();
-        PreparedStatement statement = Main.con.prepareStatement("SELECT inventType FROM inventory;");
+        PreparedStatement statement = DatabaseConnection.conn.prepareStatement("SELECT inventType FROM inventory;");
         ResultSet resultSet = statement.executeQuery();
         while (resultSet.next()) {
             array.add(resultSet.getString(1));
@@ -48,14 +50,14 @@ public class Inventory {            //to check nr. of availablity
     }
 
     //SQL Befehl zum INSERT Inventory
-    public static void postInventory (Inventory inventory) throws Exception{
+    public static void postInventory (Inventories inventories) throws Exception{
 
-        PreparedStatement posted = Main.con.prepareStatement("INSERT INTO inventory (inventType, inventNumber) VALUES ('"+inventory.getInventType()+"', '"+inventory.getInventSum()+"')");
+        PreparedStatement posted = DatabaseConnection.conn.prepareStatement("INSERT INTO inventory (inventType, inventNumber) VALUES ('"+ inventories.getInventType()+"', '"+ inventories.getInventSum()+"')");
         posted.executeUpdate();}
 
     //Increase number of inventory items +1
     public static void incInvNr(int invID) throws SQLException {
-        PreparedStatement statement = Main.con.prepareStatement("UPDATE inventory SET inventNumber = inventNumber + 1 WHERE inventID = "+invID);
+        PreparedStatement statement = DatabaseConnection.conn.prepareStatement("UPDATE inventory SET inventNumber = inventNumber + 1 WHERE inventID = "+invID);
         statement.executeUpdate();
     }
 
@@ -65,7 +67,7 @@ public class Inventory {            //to check nr. of availablity
         return "Inventory{" +
                 "inventType='" + inventType + '\'' +
                 ", inventSum=" + inventSum +
-/*                ", inventID=" + inventID +*/
+                /*                ", inventID=" + inventID +*/
                 '}';
     }
 }

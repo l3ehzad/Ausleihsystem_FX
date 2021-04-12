@@ -14,7 +14,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="1024.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.artikelAusleihenController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="1024.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.artikelAusleihenController">
     <children>
         <VBox fx:id="menuBox" layoutY="-9.0" prefHeight="616.0" prefWidth="244.0" style="-fx-background-color: #005dd8;">
             <children>
@@ -30,7 +30,7 @@
                         </Label>
                         <ImageView fitHeight="64.0" fitWidth="66.0" layoutX="8.0" layoutY="22.0" pickOnBounds="true" preserveRatio="true">
                             <image>
-                                <Image url="@../Images/HausLogo.png" />
+                                <Image url="@../zImages/HausLogo.png" />
                             </image>
                         </ImageView>
                     </children>
@@ -145,16 +145,18 @@
                         <Font name="System Bold" size="16.0" />
                      </font>
                   </Label>
-                  <TextField layoutX="103.0" layoutY="82.0" prefHeight="25.0" prefWidth="200.0" promptText="Muster" />
-                  <TextField layoutX="424.0" layoutY="82.0" prefHeight="25.0" prefWidth="200.0" promptText="Max" />
-                  <TextField layoutX="103.0" layoutY="125.0" prefHeight="25.0" prefWidth="200.0" promptText="ab1234" />
+                  <TextField fx:id="lastName" layoutX="103.0" layoutY="82.0" prefHeight="25.0" prefWidth="200.0" promptText="Muster" />
+                  <TextField fx:id="firstName" layoutX="424.0" layoutY="82.0" prefHeight="25.0" prefWidth="200.0" promptText="Max" />
+                  <TextField fx:id="dshsID" layoutX="103.0" layoutY="125.0" prefHeight="25.0" prefWidth="200.0" promptText="ab1234" />
                   <Label layoutX="32.0" layoutY="86.0" text="Nachname" />
                   <Label layoutX="354.0" layoutY="86.0" text="Vorname" />
                   <Label layoutX="32.0" layoutY="129.0" text="DSHS-ID" />
-                  <TextField layoutX="425.0" layoutY="125.0" prefHeight="25.0" prefWidth="200.0" promptText="von der Geräteliste" />
+                  <TextField fx:id="deviceID" layoutX="425.0" layoutY="125.0" prefHeight="25.0" prefWidth="200.0" promptText="von der Geräteliste" />
                   <Label layoutX="354.0" layoutY="129.0" text="Gerät-ID" />
-                  <TextField layoutX="103.0" layoutY="169.0" prefHeight="25.0" prefWidth="200.0" promptText="z.B.: Seminar" />
+                  <TextField fx:id="reason" layoutX="103.0" layoutY="169.0" prefHeight="25.0" prefWidth="200.0" promptText="z.B.: Seminar" />
                   <Label layoutX="32.0" layoutY="173.0" text="Grund" />
+                  <Button fx:id="auslButt" layoutX="556.0" layoutY="231.0" mnemonicParsing="false" onAction="#ausleihenHandler" text="Ausleihen" />
+                  <Label fx:id="auslReport" layoutX="32.0" layoutY="235.0" onInputMethodTextChanged="#ausleihenHandler" text="Status: " />
                </children></Pane>
             </children>
         </AnchorPane>
