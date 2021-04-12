@@ -68,13 +68,6 @@ public class artikelAusleihenController implements Initializable {
         borrowedItems.addBorrowedItemToSQL();
 
         auslReport.setText("Status: Data has been successfully added.");
-
-        //MainMenu1Controller.switchToArtikelAusleihen(ActionEvent event);
-
-
-        //resetting text boxes to default max muster:
-        //lastName.setPromptText("Muster");
-
     }
 
 

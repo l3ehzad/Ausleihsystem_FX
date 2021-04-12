@@ -39,9 +39,9 @@ public class MainMenu1Controller implements Initializable {
     AnchorPane artikelHnzfgn;
 
 
-    private Stage stage;
-    private Scene scene;
-    private Parent root;
+    //private Stage stage;
+    //private Scene scene;
+    //private Parent root;
 
 
     //root = FXMLLoader.load(getClass().getResource("mainMenu1.fxml"));
