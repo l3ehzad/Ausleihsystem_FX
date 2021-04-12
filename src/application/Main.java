@@ -7,7 +7,7 @@ import javafx.scene.Scene;
 import javafx.scene.image.Image;
 import javafx.stage.Stage;
 
-public class MainFX extends Application {
+public class Main extends Application {
 
     @Override
     public void start(Stage stage) throws Exception {
@@ -15,8 +15,8 @@ public class MainFX extends Application {
             Parent root = FXMLLoader.load(getClass().getResource("../FXML/login.fxml"));
             Scene scene = new Scene(root, 1024, 600);
 
-            String css = this.getClass().getResource("styling.css").toExternalForm();
-            scene.getStylesheets().add(css);
+            //String css = this.getClass().getResource("styling.css").toExternalForm();
+            //scene.getStylesheets().add(css);
 
             //define scene 2 for css 2 - main menu:
 /*            Scene scene2 = new Scene(FXMLLoader.load(getClass().getResource("mainMenu1.fxml")));

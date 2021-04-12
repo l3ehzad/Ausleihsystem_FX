@@ -1,13 +1,20 @@
-package application;
+package Controllers;
 
+import application.BorrowedItems;
+import application.DateStamps;
+import application.Persons;
 import javafx.fxml.FXML;
+import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.Pane;
 import javafx.scene.layout.VBox;
 
-public class artikelAusleihenController {
+import java.net.URL;
+import java.util.ResourceBundle;
+
+public class artikelAusleihenController implements Initializable {
 
     @FXML
     private VBox menuBox;
@@ -71,5 +78,8 @@ public class artikelAusleihenController {
     }
 
 
+    @Override
+    public void initialize(URL url, ResourceBundle resourceBundle) {
 
+    }
 }

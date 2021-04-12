@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+
+
+<AnchorPane prefHeight="600.0" prefWidth="780.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.ArtikelRueckgabeController">
+   <children>
+      <Label layoutX="39.0" layoutY="32.0" text="Rückgabe des Artikels" />
+   </children>
+</AnchorPane>
