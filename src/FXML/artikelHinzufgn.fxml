@@ -6,7 +6,6 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-
 <AnchorPane prefHeight="600.0" prefWidth="780.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.ArtikelHinzufController">
    <children>
       <Label layoutX="39.0" layoutY="33.0" text="Artikel Hinzufügen">
@@ -17,9 +16,11 @@
       <Label layoutX="39.0" layoutY="91.0" text="Artikel Name" />
       <Label layoutX="462.0" layoutY="90.0" text="Etiket" />
       <Label layoutX="39.0" layoutY="136.0" text="Inventar-ID" />
-      <TextField layoutX="130.0" layoutY="87.0" prefHeight="25.0" prefWidth="190.0" promptText="z.B.: Dell Laptop - Latitude 3410" />
-      <TextField layoutX="514.0" layoutY="86.0" prefHeight="25.0" prefWidth="190.0" promptText="PC480-01" />
-      <TextField layoutX="130.0" layoutY="132.0" prefHeight="25.0" prefWidth="190.0" promptText="1" />
-      <Button fx:id="buttHinzufugn" layoutX="626.0" layoutY="191.0" mnemonicParsing="false" text="Hinzufügen" />
+      <TextField fx:id="artName" layoutX="130.0" layoutY="87.0" prefHeight="25.0" prefWidth="190.0" promptText="z.B.: Dell Laptop - Latitude 3410" />
+      <TextField fx:id="etkt" layoutX="514.0" layoutY="86.0" prefHeight="25.0" prefWidth="190.0" promptText="PC480-01" />
+      <TextField fx:id="invId" layoutX="130.0" layoutY="132.0" prefHeight="25.0" prefWidth="190.0" promptText="1" />
+      <Button fx:id="buttHinzufugn" layoutX="626.0" layoutY="191.0" mnemonicParsing="false" onAction="#addDevice" text="Hinzufügen" />
+      <Label fx:id="report" layoutX="39.0" layoutY="195.0" />
+      <Label fx:id="report2" layoutX="39.0" layoutY="220.0" />
    </children>
 </AnchorPane>
