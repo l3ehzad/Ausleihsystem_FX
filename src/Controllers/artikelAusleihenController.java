@@ -10,6 +10,7 @@ import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.Pane;
 import javafx.scene.layout.VBox;
+import javafx.scene.paint.Color;
 
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -67,7 +68,13 @@ public class artikelAusleihenController implements Initializable {
         BorrowedItems borrowedItems = new BorrowedItems(devID, dsID, borrowDate, reas);
         borrowedItems.addBorrowedItemToSQL();
 
-        auslReport.setText("Status: Data has been successfully added.");
+        auslReport.setText("Status: Artikel wurde erfolgreich hinzugefügt.");
+        auslReport.setTextFill(Color.web("74e513"));
+        lastName.setText("");
+        firstName.setText("");
+        dshsID.setText("");
+        reason.setText("");
+        deviceID.setText("");
     }
 
 

@@ -36,6 +36,9 @@ public class MainMenu1Controller implements Initializable {
     private Button buttAusleihliste;
 
     @FXML
+    private Button buttAvailableItems;
+
+    @FXML
     private AnchorPane holderPane;
 
 
@@ -44,6 +47,7 @@ public class MainMenu1Controller implements Initializable {
     AnchorPane artikelAuslhn;
     AnchorPane artikelHnzfgn;
     AnchorPane ausleihListe;
+    AnchorPane availbleItems;
 
 
     //private Stage stage;
@@ -78,6 +82,10 @@ public class MainMenu1Controller implements Initializable {
         setNode(ausleihListe);
     }
 
+    public void switchToAvailableItems(ActionEvent event) throws IOException {
+        availbleItems = FXMLLoader.load(getClass().getResource("../FXML/availableItems.fxml"));
+        setNode(availbleItems);
+    }
 
 /*    public void buttArtklAusleihen (ActionEvent event) throws IOException, RuntimeException {
 

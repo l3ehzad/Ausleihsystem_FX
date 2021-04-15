@@ -6,7 +6,6 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-
 <AnchorPane prefHeight="600.0" prefWidth="780.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.ausleihListeController">
    <children>
       <TableView fx:id="ausleiListeTableView" layoutX="10.0" layoutY="66.0" prefHeight="524.0" prefWidth="759.0">
@@ -15,9 +14,9 @@
           <TableColumn fx:id="devNameCol" prefWidth="129.20001983642578" text="Gerät-Name" />
             <TableColumn fx:id="devLabelCol" prefWidth="84.39996337890625" text="Gerät-Etiket" />
             <TableColumn fx:id="dshsIdCol" prefWidth="70.4000244140625" text="DSHS-ID" />
-            <TableColumn fx:id="nameCol" prefWidth="136.39996337890625" text="Name" />
-            <TableColumn fx:id="borrDateCol" prefWidth="136.79989624023438" text="Ausleihdatum" />
-            <TableColumn fx:id="reasonCol" prefWidth="136.800048828125" text="Grund" />
+            <TableColumn fx:id="nameCol" prefWidth="122.4000244140625" text="Name" />
+            <TableColumn fx:id="borrDateCol" prefWidth="142.40005493164062" text="Ausleihdatum" />
+            <TableColumn fx:id="reasonCol" prefWidth="141.20000000000005" text="Grund" />
         </columns>
       </TableView>
       <Label layoutX="39.0" layoutY="32.0" text="Ausleihliste">
