@@ -104,7 +104,7 @@
                   <Glow />
                </effect>
             </Button>
-            <Button alignment="BASELINE_LEFT" mnemonicParsing="false" prefHeight="47.0" prefWidth="244.0" text="Inventarartikel Hinzufügen">
+            <Button fx:id="buttInvHinzufugen" alignment="BASELINE_LEFT" mnemonicParsing="false" onAction="#switchToInventHinzufgn" prefHeight="47.0" prefWidth="244.0" text="Inventarartikel Hinzufügen">
                <opaqueInsets>
                   <Insets />
                </opaqueInsets>

@@ -1,6 +1,6 @@
 package Controllers;
 
-
+import application.AvailableItemsIntermediate;
 import DBConnection.DatabaseConnection;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;

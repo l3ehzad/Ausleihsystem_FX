@@ -8,7 +8,7 @@
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="780.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.artikelAusleihenController">
     <children>
-      <Label layoutX="39.0" layoutY="33.0" text="Artiekl Ausleihen">
+      <Label layoutX="38.0" layoutY="32.0" text="Artiekl Ausleihen">
          <font>
             <Font name="System Bold" size="16.0" />
          </font>

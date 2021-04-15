@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="600.0" prefWidth="780.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.InventArtklController">
+   <children>
+      <Label layoutX="38.0" layoutY="32.0" text="Invantar Gruppen">
+         <font>
+            <Font name="System Bold" size="16.0" />
+         </font>
+      </Label>
+      <TableView fx:id="inventTableView" layoutX="33.0" layoutY="192.0" prefHeight="398.0" prefWidth="714.0">
+        <columns>
+          <TableColumn fx:id="invID_col" prefWidth="150.85717582702637" text="Inventar-ID" />
+          <TableColumn fx:id="invName_col" minWidth="0.0" prefWidth="381.71421813964844" text="Inventar-Name" />
+            <TableColumn fx:id="menge_col" minWidth="0.0" prefWidth="220.0001220703125" text="Menge" />
+        </columns>
+      </TableView>
+      <Label layoutX="38.0" layoutY="161.0" text="Verfügbare Gruppe">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+      </Label>
+      <Label layoutX="38.0" layoutY="64.0" text="Bitte geben Sie die neue Kategorie von Inventar Gruppe, falls nicht vorhanden ist:">
+         <font>
+            <Font size="13.0" />
+         </font>
+      </Label>
+      <TextField fx:id="newInventInput" layoutX="518.0" layoutY="61.0" prefHeight="25.0" prefWidth="230.0" />
+      <Button fx:id="buttAddInvent" layoutX="659.0" layoutY="107.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="89.0" text="Hinzufügen" />
+      <Label fx:id="report" layoutX="38.0" layoutY="111.0" text="Status:" />
+   </children>
+</AnchorPane>
