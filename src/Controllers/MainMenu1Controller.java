@@ -56,6 +56,9 @@ public class MainMenu1Controller implements Initializable {
     AnchorPane availbleItems;
     AnchorPane invHinzufgn;
     AnchorPane alleArtikel;
+    AnchorPane searchDev;
+    AnchorPane searchId;
+
 
 
     private void setNode(Node node) {
@@ -98,6 +101,15 @@ public class MainMenu1Controller implements Initializable {
         setNode(alleArtikel);
     }
 
+    public void switchToSearchDev(ActionEvent event) throws IOException {
+        searchDev = FXMLLoader.load(getClass().getResource("../FXML/searchDev.fxml"));
+        setNode(searchDev);
+    }
+
+    public void switchToSearchId(ActionEvent event) throws IOException {
+        searchId = FXMLLoader.load(getClass().getResource("../FXML/searchID.fxml"));
+        setNode(searchId);
+    }
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {

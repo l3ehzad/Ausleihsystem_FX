@@ -120,8 +120,8 @@
             </Button>
             <MenuButton alignment="BASELINE_LEFT" mnemonicParsing="false" prefHeight="49.0" prefWidth="244.0" text="Suchen">
               <items>
-                <MenuItem mnemonicParsing="false" text="Action 1" />
-                <MenuItem mnemonicParsing="false" text="Action 2" />
+                <MenuItem fx:id="suchenArtikel" mnemonicParsing="false" onAction="#switchToSearchDev" text="Artikel " />
+                <MenuItem fx:id="suchenID" mnemonicParsing="false" onAction="#switchToSearchId" text="DSHS-ID" />
               </items>
                <opaqueInsets>
                   <Insets />

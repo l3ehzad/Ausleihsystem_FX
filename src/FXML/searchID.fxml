@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+
+<AnchorPane prefHeight="600.0" prefWidth="780.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.SearchIDController">
+   <children>
+      <Label layoutX="38.0" layoutY="32.0" text="DSHS-ID Suchen">
+         <font>
+            <Font name="System Bold" size="16.0" />
+         </font>
+      </Label>
+      <Label layoutX="38.0" layoutY="78.0" text="Bitte geben Sie die DSHS-ID ein:">
+         <font>
+            <Font size="13.0" />
+         </font>
+      </Label>
+      <TextField fx:id="dshsIdBox" layoutX="253.0" layoutY="75.0" prefHeight="25.0" prefWidth="185.0" promptText="ab1234" />
+      <Button fx:id="buttSearchID" layoutX="652.0" layoutY="75.0" mnemonicParsing="false" onAction="#searchDshsID" text="Suchen" />
+      <Label fx:id="report" layoutX="38.0" layoutY="115.0" />
+      <TableView fx:id="dshsSuchenTableView" layoutX="38.0" layoutY="151.0" prefHeight="306.0" prefWidth="722.0">
+        <columns>
+          <TableColumn fx:id="dshsID_col" prefWidth="61.142879486083984" text="DSHS-ID" />
+          <TableColumn fx:id="vName_col" prefWidth="83.42852783203125" text="Vorname" />
+            <TableColumn fx:id="nName_Col" prefWidth="75.99995422363281" text="Nachname" />
+            <TableColumn fx:id="artikelID_col" prefWidth="82.2857666015625" text="Artikel-ID" />
+            <TableColumn fx:id="datum_col" prefWidth="145.714111328125" text="Ausleihdatum" />
+            <TableColumn fx:id="artklName_col" prefWidth="118.28585815429688" text="Artikelname" />
+            <TableColumn fx:id="etikett_col" prefWidth="74.2857666015625" text="Etikettname" />
+            <TableColumn fx:id="invntTyp_col" prefWidth="78.857177734375" text="Artikeltyp" />
+        </columns>
+      </TableView>
+   </children>
+</AnchorPane>
