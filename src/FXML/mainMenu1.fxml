@@ -136,6 +136,20 @@
                   <Glow />
                </effect>
             </MenuButton>
+            <Button fx:id="buttAllDev" alignment="BASELINE_LEFT" mnemonicParsing="false" onAction="#switchToAlleArtikel" prefHeight="47.0" prefWidth="244.0" text="Alle Artikel">
+               <opaqueInsets>
+                  <Insets />
+               </opaqueInsets>
+               <padding>
+                  <Insets left="50.0" />
+               </padding>
+               <font>
+                  <Font name="System Bold" size="13.0" />
+               </font>
+               <effect>
+                  <Glow />
+               </effect>
+            </Button>
          </children>
       </VBox>
       <AnchorPane fx:id="holderPane" layoutX="244.0" prefHeight="600.0" prefWidth="781.0" />

@@ -42,6 +42,9 @@ public class MainMenu1Controller implements Initializable {
     private Button buttInvHinzufugen;
 
     @FXML
+    private Button buttAllDev;
+
+    @FXML
     private AnchorPane holderPane;
 
 
@@ -52,14 +55,8 @@ public class MainMenu1Controller implements Initializable {
     AnchorPane ausleihListe;
     AnchorPane availbleItems;
     AnchorPane invHinzufgn;
+    AnchorPane alleArtikel;
 
-
-    //private Stage stage;
-    //private Scene scene;
-    //private Parent root;
-
-
-    //root = FXMLLoader.load(getClass().getResource("mainMenu1.fxml"));
 
     private void setNode(Node node) {
         holderPane.getChildren().clear();
@@ -96,28 +93,11 @@ public class MainMenu1Controller implements Initializable {
         setNode(invHinzufgn);
     }
 
-/*    public void buttArtklAusleihen (ActionEvent event) throws IOException, RuntimeException {
-
-    }*/
-
-    public void getInformation(ActionEvent event) throws SQLException {
-
-        //DatabaseConnection databaseConnection = new DatabaseConnection("root","");
-        PreparedStatement statement = DatabaseConnection.conn.prepareStatement("SELECT device.deviceID, device.deviceName, device.labelName, inventory.inventType, person.dshsID, person.firstName, person.lastName, borroweditem.borrowDate, borroweditem.reason FROM device JOIN borroweditem ON device.deviceID = borroweditem.fk_deviceID JOIN inventory ON inventory.inventID = borroweditem.fk_inventID JOIN person ON borroweditem.fk_personID = person.personID");
-
-        ResultSet result = statement.executeQuery();
-        while(result.next()){
-            System.out.print("Device ID: " + result.getString(1));
-            System.out.print(" | Device Name: " + result.getString(2)+" - "+result.getString(4));
-            System.out.print(" | Device lable: " + result.getString(3));
-            System.out.print(" | DSHS-ID: " + result.getString(5));
-            System.out.print(" | Name: " + result.getString(6)+" "+result.getString(7));
-            System.out.print(" | Borrow Date: " + result.getString(8));
-            System.out.print(" | Reason: " + result.getString(9));
-            System.out.println();
-        }
-
+    public void switchToAlleArtikel(ActionEvent event) throws IOException {
+        alleArtikel = FXMLLoader.load(getClass().getResource("../FXML/alleArtikel.fxml"));
+        setNode(alleArtikel);
     }
+
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {

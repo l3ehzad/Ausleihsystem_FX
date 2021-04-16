@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="600.0" prefWidth="780.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.AlleArtikelController">
+   <children>
+      <Label layoutX="38.0" layoutY="32.0" text="Alle Artikel">
+         <font>
+            <Font name="System Bold" size="16.0" />
+         </font>
+      </Label>
+      <TableView fx:id="alleArtiklTableView" layoutX="38.0" layoutY="66.0" prefHeight="511.0" prefWidth="707.0">
+        <columns>
+          <TableColumn fx:id="artID_col" prefWidth="120.57140731811523" text="Artikel-ID" />
+          <TableColumn fx:id="artName_col" prefWidth="142.28578186035156" text="Artikelname" />
+            <TableColumn fx:id="etktName_col" prefWidth="142.8570556640625" text="Etiketname" />
+            <TableColumn fx:id="availble_col" prefWidth="152.57150268554688" text="Verfügbar" />
+            <TableColumn fx:id="invID_col" prefWidth="145.142822265625" text="Inventar-ID" />
+        </columns>
+      </TableView>
+   </children>
+</AnchorPane>
