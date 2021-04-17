@@ -6,7 +6,6 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-
 <AnchorPane prefHeight="600.0" prefWidth="780.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.SearchDevController">
    <children>
       <Label layoutX="38.0" layoutY="32.0" text="Artikel Suchen">
@@ -21,6 +20,7 @@
       </Label>
       <TextField fx:id="devIdBox" layoutX="256.0" layoutY="75.0" prefHeight="25.0" prefWidth="218.0" promptText="Gerät-ID" />
       <Label fx:id="report" layoutX="38.0" layoutY="132.0" />
-      <Button fx:id="buttSuchenDev" layoutX="648.0" layoutY="75.0" mnemonicParsing="false" text="Suchen" />
+      <Button fx:id="buttSuchenDev" layoutX="648.0" layoutY="75.0" mnemonicParsing="false" onAction="#searchDevIdButton" text="Suchen" />
+      <Label fx:id="report1" layoutX="38.0" layoutY="152.0" />
    </children>
 </AnchorPane>

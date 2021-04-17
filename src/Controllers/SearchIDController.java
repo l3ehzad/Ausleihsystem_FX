@@ -5,21 +5,17 @@ import application.SearchIdIntermediate;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
+import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.control.*;
+import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.paint.Color;
 
 import java.net.URL;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ResourceBundle;
-
-import javafx.fxml.FXML;
-import javafx.scene.control.Button;
-import javafx.scene.control.Label;
-import javafx.scene.control.TableColumn;
-import javafx.scene.control.TableView;
-import javafx.scene.control.TextField;
-import javafx.scene.control.cell.PropertyValueFactory;
 
 public class SearchIDController implements Initializable {
 
@@ -66,37 +62,51 @@ public class SearchIDController implements Initializable {
 
 
     //
-    public void searchDshsID(ActionEvent event) {
+    public void searchDshsID(ActionEvent event) throws SQLException {
+
         dshsID = dshsIdBox.getText();
+
+        if (!application.Persons.checkDshsIDAvailablity(dshsID)) {
+            report.setText("Invalid DSHS-ID! Bitte geben Sie die gültige DSHS-ID ein!");
+            report.setTextFill(Color.web("cd0000"));
+            if (dshsIdBox.getText()=="") {
+                report.setText("Textfield kann nicht leer sein! Bitte geben Sie die gültige DSHS-ID ein!");
+                report.setTextFill(Color.web("cd0000"));}
+        } else {
+
+            PreparedStatement statement = null;
+            try {
+                statement = DatabaseConnection.conn.prepareStatement("SELECT  person.dshsID, person.firstName, person.lastName,borroweditem.fk_deviceID, borroweditem.borrowDate, device.deviceName, device.labelName, inventory.inventType FROM person JOIN borroweditem ON person.personID = borroweditem.fk_personID JOIN device ON device.deviceID = borroweditem.fk_deviceID JOIN inventory ON inventory.inventID = borroweditem.fk_inventID WHERE person.dshsID = '" + dshsID + "'");
+
+                ResultSet result = statement.executeQuery();
+                while (result.next()) {
+                    oblist.add(new SearchIdIntermediate(result.getString("dshsID"), result.getString("firstName"), result.getString("lastName"), Integer.parseInt(result.getString("fk_deviceID")), result.getString("borrowDate"), result.getString("deviceName"), result.getString("labelName"), result.getString("inventType")));
+                }
+
+            } catch (SQLException throwables) {
+                throwables.printStackTrace();
+            }
+
+            dshsID_col.setCellValueFactory(new PropertyValueFactory<>("dshsID"));
+            vName_col.setCellValueFactory(new PropertyValueFactory<>("firstName"));
+            nName_Col.setCellValueFactory(new PropertyValueFactory<>("lastName"));
+            artikelID_col.setCellValueFactory(new PropertyValueFactory<>("deviceId"));
+            datum_col.setCellValueFactory(new PropertyValueFactory<>("borrowedDate"));
+            artklName_col.setCellValueFactory(new PropertyValueFactory<>("deviceName"));
+            etikett_col.setCellValueFactory(new PropertyValueFactory<>("deviceLable"));
+            invntTyp_col.setCellValueFactory(new PropertyValueFactory<>("inventType"));
+
+            dshsSuchenTableView.setItems(oblist);
+            report.setText("Valid DSHS-ID.");
+            report.setTextFill(Color.web("74e513"));
+
+        }
     }
 
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
 
-        PreparedStatement statement = null;
-        try {
-            statement = DatabaseConnection.conn.prepareStatement("SELECT  person.dshsID, person.firstName, person.lastName,borroweditem.fk_deviceID, borroweditem.borrowDate, device.deviceName, device.labelName, inventory.inventType FROM person JOIN borroweditem ON person.personID = borroweditem.fk_personID JOIN device ON device.deviceID = borroweditem.fk_deviceID JOIN inventory ON inventory.inventID = borroweditem.fk_inventID WHERE person.dshsID = '"+dshsID+"'");
-
-            ResultSet result = statement.executeQuery();
-            while (result.next()){
-                oblist.add(new SearchIdIntermediate(result.getString("dshsID"),result.getString("firstName"), result.getString("lastName"), Integer.parseInt(result.getString("fk_deviceID")), result.getString("borrowDate"), result.getString("deviceName"), result.getString("labelName"), result.getString("inventType")));
-            }
-
-        } catch (SQLException throwables) {
-            throwables.printStackTrace();
-        }
-
-        dshsID_col.setCellValueFactory(new PropertyValueFactory<>("dshsID"));
-        vName_col.setCellValueFactory(new PropertyValueFactory<>("firstName"));
-        nName_Col.setCellValueFactory(new PropertyValueFactory<>("lastName"));
-        artikelID_col.setCellValueFactory(new PropertyValueFactory<>("deviceId"));
-        datum_col.setCellValueFactory(new PropertyValueFactory<>("borrowedDate"));
-        artklName_col.setCellValueFactory(new PropertyValueFactory<>("deviceName"));
-        etikett_col.setCellValueFactory(new PropertyValueFactory<>("deviceLable"));
-        invntTyp_col.setCellValueFactory(new PropertyValueFactory<>("inventType"));
-
-        dshsSuchenTableView.setItems(oblist);
 
     }
 }
