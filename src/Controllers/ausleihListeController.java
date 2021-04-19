@@ -4,18 +4,21 @@ import DBConnection.DatabaseConnection;
 import application.BorrowedItemsIntermediate;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
+import javafx.event.ActionEvent;
+import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.print.PrinterJob;
+import javafx.scene.control.Button;
+import javafx.scene.control.TableColumn;
+import javafx.scene.control.TableView;
+import javafx.scene.control.cell.PropertyValueFactory;
 
+import java.awt.*;
 import java.net.URL;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ResourceBundle;
-
-import javafx.fxml.FXML;
-import javafx.scene.control.TableColumn;
-import javafx.scene.control.TableView;
-import javafx.scene.control.cell.PropertyValueFactory;
 
 public class ausleihListeController implements Initializable {
 
@@ -44,7 +47,17 @@ public class ausleihListeController implements Initializable {
     @FXML
     private TableColumn<application.BorrowedItemsIntermediate, String> reasonCol;
 
+    @FXML
+    private Button ButtAusleihPrint;
+
     ObservableList<BorrowedItemsIntermediate> oblist = FXCollections.observableArrayList();
+
+    public void printAusleihList(ActionEvent event){
+        PrinterJob printerJob = PrinterJob.createPrinterJob();
+
+
+    }
+
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
@@ -55,7 +68,7 @@ public class ausleihListeController implements Initializable {
 
         ResultSet result = statement.executeQuery();
         while (result.next()){
-            oblist.add(new BorrowedItemsIntermediate(Integer.parseInt(result.getString("deviceID")),result.getString("deviceName"), result.getString("labelName"),result.getString("dshsID"), result.getString("lastName"), result.getString("borrowDate"),result.getString("reason")));
+            oblist.add(new application.BorrowedItemsIntermediate(Integer.parseInt(result.getString("deviceID")),result.getString("deviceName"), result.getString("labelName"),result.getString("dshsID"), result.getString("lastName"), result.getString("borrowDate"),result.getString("reason")));
         }
 
         } catch (SQLException throwables) {
@@ -71,6 +84,8 @@ public class ausleihListeController implements Initializable {
         reasonCol.setCellValueFactory(new PropertyValueFactory<>("reason"));
 
         ausleiListeTableView.setItems(oblist);
+
+
 
     }
 }
